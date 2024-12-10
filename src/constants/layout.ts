@@ -54,6 +54,11 @@ export const skillText = [
     title: 'Python',
     desc: 'Python 마스터',
   },
+  {
+    category: 'language',
+    title: 'C',
+    desc: 'C언어가 뭐였지..',
+  },
   { category: 'frontend', title: 'React', desc: 'React 딸깍딸깍..' },
   { category: 'frontend', title: 'Next', desc: 'Next 딸깍딸깍..ing ~' },
   { category: 'frontend', title: 'Axios', desc: 'Axios 딸깍딸깍..' },
@@ -90,7 +95,23 @@ export const ProjectText = [
   {
     title: '커뮤니T',
     desc: '무한 CRUD 반복',
-    stack: ['React', 'TypeScript', 'Axios', 'Vercel'],
+    stack: ['React', 'TypeScript', 'Axios', 'Vercel', 'TailwindCSS'],
     githubLink: 'https://github.com/Ju-MINJAE/communiT',
+  },
+];
+
+export const contactText = [
+  {
+    title: 'Phone',
+    info: '+82 010-7591-1040',
+  },
+  {
+    title: 'Email',
+    info: 'juminjae98@gmail.com',
+  },
+
+  {
+    title: 'linkedin',
+    info: 'Not Yet',
   },
 ];
