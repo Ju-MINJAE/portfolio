@@ -20,10 +20,10 @@ const EmailForm = () => {
     if (formRef.current) {
       emailjs
         .sendForm(
-          'service_kdcv7jp',
-          'template_z8umoyh',
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
           formRef.current,
-          'RgJZVyKThcV4jluMs'
+          process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
         )
         .then(
           (result) => {
