@@ -1,11 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { contactText } from '@/constants/layout';
 import { Mail, Phone, Linkedin } from 'lucide-react';
+import ContactPopup from './ContactPopup';
 
 const Contact = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,11 +66,23 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{contact.title}</h3>
                 <p className="text-gray-400 mb-4">{contact.info}</p>
+                {contact.isEmail ? (
+                  <button
+                    onClick={() => setIsPopupOpen(true)}
+                    className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                  >
+                    qq
+                  </button>
+                ) : null}
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
+      <ContactPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+      />
     </section>
   );
 };

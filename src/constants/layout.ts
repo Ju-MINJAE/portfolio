@@ -108,6 +108,7 @@ export const contactText = [
   {
     title: 'Email',
     info: 'juminjae98@gmail.com',
+    isEmail: true,
   },
 
   {
