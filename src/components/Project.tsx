@@ -48,7 +48,7 @@ const ProjectItem = ({
   return (
     <motion.div
       ref={ref}
-      className={`flex flex-col md:flex-row items-center mb-20 ${
+      className={`flex flex-col md:flex-row  mb-20 ${
         index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
       }`}
       initial={{ opacity: 0, y: 50 }}
@@ -61,8 +61,9 @@ const ProjectItem = ({
             <Image
               src={project.image}
               alt={project.title}
-              layout="fill"
-              objectFit="cover"
+              sizes="80vw, 24vw"
+              fill
+              style={{ objectFit: 'cover' }}
               className="rounded-lg shadow-lg"
             />
           ) : (

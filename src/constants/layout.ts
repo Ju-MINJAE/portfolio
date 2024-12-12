@@ -96,6 +96,7 @@ export const ProjectText = [
     title: '커뮤니T',
     desc: '무한 CRUD 반복',
     stack: ['React', 'TypeScript', 'Axios', 'Vercel', 'TailwindCSS'],
+    image: '/image/123.png',
     githubLink: 'https://github.com/Ju-MINJAE/communiT',
   },
 ];

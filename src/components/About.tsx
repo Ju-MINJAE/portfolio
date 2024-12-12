@@ -30,7 +30,7 @@ const About = () => {
     <section id="About" className="bg-gray-900 text-white py-20">
       <div className="container mx-auto px-4">
         <motion.div
-          className="flex flex-col md:flex-row items-center justify-between"
+          className="flex flex-col md:flex-row items-center "
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -41,7 +41,7 @@ const About = () => {
               alt="MinJae's profile"
               width={400}
               height={400}
-              className="rounded-full shadow-lg"
+              className="rounded-full shadow-lg md:pr-8"
             />
           </motion.div>
           <motion.div className="md:w-1/2" variants={containerVariants}>
