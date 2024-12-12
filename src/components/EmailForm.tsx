@@ -26,16 +26,14 @@ const EmailForm = () => {
           process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
         )
         .then(
-          (result) => {
-            console.log(result.text);
+          () => {
             setStatus({
               message: '성공적으로 이메일이 전송되었습니다!',
               isError: false,
             });
             if (formRef.current) formRef.current.reset();
           },
-          (error) => {
-            console.error(error.text);
+          () => {
             setStatus({
               message: '이메일 전송에 실패했습니다. 다시 시도해주세요.',
               isError: true,
@@ -52,12 +50,7 @@ const EmailForm = () => {
     'w-full bg-gray-800 text-white border border-gray-700 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent';
 
   return (
-    <motion.div
-      className="email-form-container bg-gray-900 p-8 rounded-lg max-w-md mx-auto"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="email-form-container bg-gray-900 p-8 rounded-lg max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-white">Send me a message</h2>
       <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
         <div>
@@ -151,7 +144,7 @@ const EmailForm = () => {
           </p>
         </motion.div>
       )}
-    </motion.div>
+    </div>
   );
 };
 
