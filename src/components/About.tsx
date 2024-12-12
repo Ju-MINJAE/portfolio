@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Github, BookOpen, Mail } from 'lucide-react';
+import { Github, BookOpen } from 'lucide-react';
 import { aboutText } from '@/constants/layout';
 
 const About = () => {
@@ -72,12 +72,6 @@ const About = () => {
                 className="text-blue-400 hover:text-blue-300 transition-colors"
               >
                 <BookOpen size={25} />
-              </a>
-              <a
-                href="mailto:juminjae98@gmail.com"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
-              >
-                <Mail size={25} />
               </a>
             </motion.div>
           </motion.div>
