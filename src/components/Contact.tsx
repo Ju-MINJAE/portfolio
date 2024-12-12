@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { contactText } from '@/constants/layout';
-import { Mail, Phone, Linkedin } from 'lucide-react';
+import { Mail, Phone, Linkedin, Copy, ExternalLink } from 'lucide-react';
 import ContactPopup from './ContactPopup';
 
 const Contact = () => {
@@ -28,6 +28,26 @@ const Contact = () => {
     },
   };
 
+  const handleAction = (action: string, info: string) => {
+    switch (action) {
+      case 'copy':
+        navigator.clipboard.writeText(info);
+        break;
+      case 'email':
+        setIsPopupOpen(true);
+        break;
+      case 'link':
+        if (info !== 'Not Yet') {
+          window.open(info, '_blank');
+        } else {
+          alert('LinkedIn URL not available.');
+        }
+        break;
+      default:
+        console.warn('Unknown action:', action);
+    }
+  };
+
   const getIcon = (title: string) => {
     switch (title.toLowerCase()) {
       case 'email':
@@ -41,13 +61,26 @@ const Contact = () => {
     }
   };
 
+  const getActionIcon = (action: string) => {
+    switch (action) {
+      case 'copy':
+        return <Copy className="w-5 h-5" />;
+      case 'email':
+        return <Mail className="w-5 h-5" />;
+      case 'link':
+        return <ExternalLink className="w-5 h-5" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <section
       id="Contact"
       className="py-20 bg-gradient-to-b from-gray-900 to-black text-white"
     >
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 ">Contact</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-16">Contact</h2>
         <motion.div
           className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-8"
           variants={containerVariants}
@@ -60,20 +93,19 @@ const Contact = () => {
               variants={itemVariants}
               className="w-full md:w-1/3 max-w-sm"
             >
-              <div className="bg-gray-800 rounded-lg p-8 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-gray-700 hover:shadow-xl transform hover:-translate-y-2">
+              <div className="bg-gray-800 rounded-lg p-8 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-gray-700 hover:shadow-xl transform hover:-translate-y-2 relative">
                 <div className="text-blue-400 mb-4">
                   {getIcon(contact.title)}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{contact.title}</h3>
                 <p className="text-gray-400 mb-4">{contact.info}</p>
-                {contact.isEmail ? (
-                  <button
-                    onClick={() => setIsPopupOpen(true)}
-                    className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-                  >
-                    qq
-                  </button>
-                ) : null}
+                <button
+                  onClick={() => handleAction(contact.onClick, contact.info)}
+                  className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 flex items-center justify-center"
+                >
+                  {getActionIcon(contact.onClick)}
+                  <span className="ml-2">{contact.btnText}</span>
+                </button>
               </div>
             </motion.div>
           ))}

@@ -79,8 +79,8 @@ export const skillText = [
 
 export const ProjectText = [
   {
-    title: '개인 물품 대여 서비스',
-    desc: 'C2C 서비스',
+    title: 'Villez',
+    desc: '개인 물품 대여 C2C 서비스',
     stack: ['React', 'Firebase', 'PWA'],
     image: '/image/test.jpeg',
     githubLink: 'https://github.com/Ju-MINJAE/Viliez/tree/main/viliez-pwa',
@@ -103,16 +103,21 @@ export const ProjectText = [
 export const contactText = [
   {
     title: 'Phone',
-    info: '+82 010-7591-1040',
+    info: '010-7591-1040',
+    onClick: 'copy',
+    btnText: '복사하기',
   },
   {
     title: 'Email',
     info: 'juminjae98@gmail.com',
-    isEmail: true,
+    onClick: 'email',
+    btnText: '전송하기',
   },
 
   {
     title: 'linkedin',
-    info: 'Not Yet',
+    info: 'https://www.linkedin.com/feed/',
+    onClick: 'link',
+    btnText: '방문하기',
   },
 ];
