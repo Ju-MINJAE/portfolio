@@ -5,9 +5,19 @@ import { motion } from 'framer-motion';
 import { contactText } from '@/constants/layout';
 import { Mail, Phone, Linkedin, Copy, ExternalLink } from 'lucide-react';
 import ContactPopup from './ContactPopup';
+import Toast from './Toast';
 
 const Contact = () => {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+  const [toast, setToast] = useState<{
+    message: string;
+    type: 'success' | 'error' | 'info';
+    isVisible: boolean;
+  }>({
+    message: '',
+    type: 'success',
+    isVisible: false,
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -28,10 +38,21 @@ const Contact = () => {
     },
   };
 
+  const showToast = (
+    message: string,
+    type: 'success' | 'error' | 'info' = 'success'
+  ) => {
+    setToast({ message, type, isVisible: true });
+    setTimeout(() => {
+      setToast((prev) => ({ ...prev, isVisible: false }));
+    }, 2500);
+  };
+
   const handleAction = (action: string, info: string) => {
     switch (action) {
       case 'copy':
         navigator.clipboard.writeText(info);
+        showToast('전화번호가 복사되었습니다', 'success');
         break;
       case 'email':
         setIsPopupOpen(true);
@@ -40,7 +61,7 @@ const Contact = () => {
         if (info !== 'Not Yet') {
           window.open(info, '_blank');
         } else {
-          alert('LinkedIn URL not available.');
+          showToast('LinkedIn URL is not available', 'error');
         }
         break;
       default:
@@ -81,6 +102,11 @@ const Contact = () => {
     >
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold mb-16">Contact</h2>
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          isVisible={toast.isVisible}
+        />
         <motion.div
           className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-8"
           variants={containerVariants}
@@ -99,13 +125,15 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{contact.title}</h3>
                 <p className="text-gray-400 mb-4">{contact.info}</p>
-                <button
+                <motion.button
                   onClick={() => handleAction(contact.onClick, contact.info)}
                   className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 flex items-center justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   {getActionIcon(contact.onClick)}
                   <span className="ml-2">{contact.btnText}</span>
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           ))}
