@@ -3,12 +3,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { skillText } from '@/constants/layout';
-import { ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 interface Skill {
   category: string;
   title: string;
   desc: string;
+  icon: string;
 }
 
 const groupsByCategory = (skills: Skill[]) => {
@@ -59,7 +60,7 @@ const Skill = () => {
                   className={`w-full text-left py-3 px-4 rounded-lg mb-2 transition-all ${
                     category === activeTab
                       ? 'bg-blue-600 text-white'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                   }`}
                   onClick={() => setActiveTab(category)}
                   whileHover={{ scale: 1.05 }}
@@ -78,7 +79,7 @@ const Skill = () => {
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                className="bg-gray-800 rounded-lg p-6"
+                className="bg-gray-700 rounded-lg p-6"
               >
                 <motion.h3
                   className="text-2xl font-semibold mb-6 text-blue-400"
@@ -93,15 +94,19 @@ const Skill = () => {
                       variants={itemVariants}
                       className="flex items-start"
                     >
-                      <ChevronRight
-                        className="text-blue-400 mt-1 mr-2 flex-shrink-0"
-                        size={20}
-                      />
+                      <div className="flex-shrink-0 mr-4">
+                        <Image
+                          src={skill.icon}
+                          alt={`${skill.title} icon`}
+                          width={45}
+                          height={45}
+                        />
+                      </div>
                       <div>
                         <h4 className="font-semibold text-lg mb-1">
                           {skill.title}
                         </h4>
-                        <p className="text-gray-400">{skill.desc}</p>
+                        <p className="text-gray-300">{skill.desc}</p>
                       </div>
                     </motion.li>
                   ))}
