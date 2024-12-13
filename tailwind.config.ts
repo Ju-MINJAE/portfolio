@@ -11,7 +11,7 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        react: '#61DAFB',
+        react: '#55b8d4',
         vue: '#4FC08D',
         typescript: '#3178C6',
         axios: '#5A29E4',
