@@ -14,10 +14,18 @@
   }
 }
 
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/assets/fonts/PretendardGOVVariable.woff2') format('woff2');
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
+  font-family: 'Pretendard', Arial, Helvetica, sans-serif;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
