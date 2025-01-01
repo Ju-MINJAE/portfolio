@@ -1,0 +1,98 @@
+export const SkillData = [
+  {
+    category: 'language',
+    title: 'JavaScript',
+    desc: 'ES6 이상의 문법을 활용하여 동적 웹 애플리케이션을 개발할 수 있습니다.',
+    icon: '/assets/icons/JavaScript.svg',
+  },
+  {
+    category: 'frontend',
+    title: 'HTML5',
+    desc: '시맨틱 태그를 사용하여 접근성과 SEO를 고려한 마크업을 작성할 수 있습니다.',
+    icon: '/assets/icons/HTML.svg',
+  },
+  {
+    category: 'frontend',
+    title: 'CSS',
+    desc: 'CSS를 사용하여 반응형 웹 디자인 및 사용자 인터페이스를 구현할 수 있습니다.',
+    icon: '/assets/icons/CSS.svg',
+  },
+  {
+    category: 'language',
+    title: 'TypeScript',
+    desc: '정적 타입을 활용해 안정성과 유지보수성이 높은 코드를 작성할 수 있습니다.',
+    icon: '/assets/icons/TypeScript.svg',
+  },
+  {
+    category: 'language',
+    title: 'Python',
+    desc: '영상 처리 및 머신러닝 프로젝트에 Python을 활용한 경험이 있습니다.',
+    icon: '/assets/icons/Python-Dark.svg',
+  },
+  {
+    category: 'frontend',
+    title: 'React',
+    desc: 'React를 사용해 컴포넌트 기반의 사용자 인터페이스를 개발할 수 있습니다.',
+    icon: '/assets/icons/React-Dark.svg',
+  },
+  {
+    category: 'frontend',
+    title: 'Nextjs',
+    desc: '서버사이드 렌더링 및 정적 사이트 생성을 위해 Next.js를 활용할 수 있습니다.',
+    icon: '/assets/icons/NextJS-Light.svg',
+  },
+  {
+    category: 'frontend',
+    title: 'Axios',
+    desc: 'Axios를 사용하여 RESTful API와의 비동기 통신을 구현할 수 있습니다.',
+    icon: '/assets/icons/Axios.svg',
+  },
+  {
+    category: 'frontend',
+    title: 'TailwindCSS',
+    desc: '유틸리티 클래스 기반의 스타일링으로 빠르고 효율적인 UI 개발이 가능합니다.',
+    icon: '/assets/icons/TailwindCSS-Dark.svg',
+  },
+  {
+    category: 'frontend',
+    title: 'Redux',
+    desc: 'Redux를 활용하여 상태 관리 및 복잡한 상태 구조를 효율적으로 관리할 수 있습니다.',
+    icon: '/assets/icons/Redux.svg',
+  },
+  {
+    category: 'etc',
+    title: 'AWS',
+    desc: 'S3를 통한 스토리지 관리, IAM을 통한 사용자 권한 관리, Route 53을 통한 도메인 설정 경험이 있습니다.',
+    icon: '/assets/icons/AWS-Dark.svg',
+  },
+  {
+    category: 'etc',
+    title: 'Git',
+    desc: 'Git을 활용하여 형상 관리 및 협업 환경에서 버전 관리를 수행할 수 있습니다.',
+    icon: '/assets/icons/Git.svg',
+  },
+  {
+    category: 'etc',
+    title: 'GitHub',
+    desc: 'GitHub를 활용해 저장소 관리, 협업 워크플로우, 이슈 트래킹을 효율적으로 수행할 수 있습니다.',
+    icon: '/assets/icons/Github-Dark.svg',
+  },
+  {
+    category: 'etc',
+    title: 'Firebase',
+    desc: 'Firebase Authentication, Firestore, Realtime Database를 활용한 개발 경험이 있습니다.',
+    icon: '/assets/icons/Firebase-Dark.svg',
+  },
+  {
+    category: 'etc',
+    title: 'Supabase',
+    desc: 'Supabase를 사용하여 데이터베이스 및 인증 기능을 구현한 경험이 있습니다.',
+    icon: '/assets/icons/Supabase-Dark.svg',
+  },
+  {
+    category: 'etc',
+    title: 'Vercel',
+    desc: 'Vercel을 활용한 배포 및 CI/CD 환경 구축 경험이 있습니다.',
+    icon: '/assets/icons/Vercel-Dark.svg',
+  },
+];
