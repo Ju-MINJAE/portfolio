@@ -3,8 +3,9 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
-import { ProjectText } from '@/constants/layout';
+
 import { ExternalLink, Github, Calendar } from 'lucide-react';
+import { ProjectData } from '@/data/Project';
 
 interface ProjectData {
   title: string;
@@ -29,7 +30,7 @@ const Project = () => {
         >
           Projects
         </motion.h2>
-        {ProjectText.map((project: ProjectData, index) => (
+        {ProjectData.map((project: ProjectData, index) => (
           <ProjectItem key={index} project={project} index={index} />
         ))}
       </div>
@@ -58,12 +59,12 @@ const ProjectItem = ({
       transition={{ duration: 0.5, delay: 0.2 }}
     >
       <div className="md:w-1/2 mb-6 md:mb-0">
-        <div className="relative w-full h-[300px]">
+        <div className="relative w-full h-[400px]">
           {project.image ? (
             <Image
               src={project.image}
               alt={project.title}
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, 60vw"
               fill
               style={{ objectFit: 'cover' }}
               className="rounded-lg shadow-lg"

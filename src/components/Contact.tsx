@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { contactText } from '@/constants/layout';
+
 import { Mail, Phone, Linkedin, Copy, ExternalLink } from 'lucide-react';
 import ContactPopup from './ContactPopup';
 import Toast from './Toast';
+import { ContactAbout } from '@/data/Contact';
 
 const Contact = () => {
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
@@ -113,7 +114,7 @@ const Contact = () => {
           initial="hidden"
           animate="visible"
         >
-          {contactText.map((contact, index) => (
+          {ContactAbout.map((contact, index) => (
             <motion.div
               key={index}
               variants={itemVariants}

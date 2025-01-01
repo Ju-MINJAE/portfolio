@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Github, BookOpen } from 'lucide-react';
-import { aboutText } from '@/constants/layout';
+import { AboutData } from '@/data/About';
 
 const About = () => {
   const containerVariants = {
@@ -37,19 +37,19 @@ const About = () => {
         >
           <motion.div className="md:w-1/2 mb-8 md:mb-0" variants={itemVariants}>
             <Image
-              src={aboutText.img}
+              src={AboutData.img}
               alt="MinJae's profile"
               width={400}
               height={400}
-              className="rounded-full shadow-lg md:pr-8"
+              className="rounded-3xl shadow-lg object-cover "
             />
           </motion.div>
-          <motion.div className="md:w-1/2" variants={containerVariants}>
+          <motion.div className="md:w-1/2 md:pl-4" variants={containerVariants}>
             <h2 className="text-4xl font-bold mb-6">About Me</h2>
-            {aboutText.desc.map((text, index) => (
+            {AboutData.desc.map((text, index) => (
               <motion.p
                 key={index}
-                className="text-xl mb-6"
+                className="text-xl mb-4"
                 variants={itemVariants}
               >
                 {text}

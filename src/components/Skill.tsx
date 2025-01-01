@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { skillText } from '@/constants/layout';
 import Image from 'next/image';
+import { SkillData } from '@/data/Skill';
 
 interface Skill {
   category: string;
@@ -24,7 +24,7 @@ const groupsByCategory = (skills: Skill[]) => {
 };
 
 const Skill = () => {
-  const groupedSkills = groupsByCategory(skillText);
+  const groupedSkills = groupsByCategory(SkillData);
   const categories = Object.keys(groupedSkills);
   const [activeTab, setActiveTab] = useState<string>(categories[0]);
 

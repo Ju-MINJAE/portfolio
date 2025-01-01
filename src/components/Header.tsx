@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { headerNav } from '@/constants/layout';
 import { Menu, X } from 'lucide-react';
+import { HeaderData } from '@/data/Header';
 
 const scrollToSection = (
   e: React.MouseEvent<HTMLAnchorElement>,
@@ -68,7 +68,7 @@ const Header = () => {
         </motion.a>
         <nav className="hidden md:flex space-x-6">
           <ul className="flex align-center gap-x-4">
-            {headerNav.map((nav, key) => (
+            {HeaderData.map((nav, key) => (
               <motion.li
                 key={key}
                 whileHover={{ scale: 1.1 }}
@@ -113,7 +113,7 @@ const Header = () => {
           transition={{ duration: 0.3, ease: 'easeInOut' }}
           className="flex flex-col items-center space-y-4 overflow-hidden bg-gray-800"
         >
-          {headerNav.map((nav, index) => (
+          {HeaderData.map((nav, index) => (
             <motion.li
               key={index}
               variants={{
@@ -122,7 +122,9 @@ const Header = () => {
               }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               className={
-                index === 0 || index === headerNav.length - 1 ? 'pt-2 pb-2' : ''
+                index === 0 || index === HeaderData.length - 1
+                  ? 'pt-2 pb-2'
+                  : ''
               }
             >
               <a
