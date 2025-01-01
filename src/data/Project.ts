@@ -1,5 +1,19 @@
 export const ProjectData = [
   {
+    title: '채우다 Chaeuda',
+    desc: '전국 빈집을 소개하는 부동산 사이트',
+    features: [
+      '회원 인증: 자체 회원 시스템 및 소셜 로그인 지원',
+      '빈집 관리: 빈집 등록 및 검색 기능 제공',
+      '채팅 지원: 판매자와 구매자 간의 실시간 채팅 가능',
+    ],
+    duration: '2024.12 ~ 2025.01(진행중)',
+    stack: ['Nextjs', 'TypeScript', 'TailwindCSS', 'Vercel', 'AWSRoute53'],
+    image: '/image/Chaeuda.png',
+    githubLink: 'https://github.com/chaeuda-TEAM/oz-main-fe-06-team2',
+    liveLink: 'https://www.chaeuda.shop/',
+  },
+  {
     title: '커뮤니티 CommuniT',
     desc: '운동 관련 정보를 나누고 챌린지에 참여하는 사이트',
     features: [
@@ -16,35 +30,6 @@ export const ProjectData = [
     liveLink: null,
   },
   {
-    title: '채우다 Chaeuda',
-    desc: '전국 빈집을 소개하는 부동산 사이트',
-    features: [
-      '회원 인증: 자체 회원 시스템 및 소셜 로그인 지원',
-      '빈집 관리: 빈집 등록 및 검색 기능 제공',
-      '채팅 지원: 판매자와 구매자 간의 실시간 채팅 가능',
-    ],
-    duration: '2024.12 ~ 2025.01(진행중)',
-    stack: ['Nextjs', 'TypeScript', 'TailwindCSS', 'Vercel', 'AWSRoute53'],
-    image: '/image/Chaeuda.png',
-    githubLink: 'https://github.com/chaeuda-TEAM/oz-main-fe-06-team2',
-    liveLink: 'https://www.chaeuda.shop/',
-  },
-  {
-    title: '빌리지 Villez',
-    desc: '개인 간의 물품 대여와 반납을 지원하는 C2C 서비스',
-    features: [
-      '회원 관리: 회원가입, 로그인, 로그아웃 기능 제공',
-      '물품 관리: 물품 등록 및 예약 기능',
-      '대여 기록 관리: 물품 대여 기록 확인 및 반납 기능 지원',
-      '채팅 기능: 대여자와 물품 등록자 간 실시간 채팅 가능',
-    ],
-    duration: '2023.10 ~ 2023.12',
-    stack: ['React', 'Firebase', 'PWA'],
-    image: '/image/test.jpeg',
-    githubLink: 'https://github.com/Ju-MINJAE/Viliez/tree/main/viliez-pwa',
-    liveLink: null,
-  },
-  {
     title: '그리핀도미토리 Griffindormitory',
     desc: '기숙사 룸메이트를 구하고 시간표, 학점을 관리하는 애플리케이션',
     features: [
@@ -58,6 +43,21 @@ export const ProjectData = [
     stack: ['Vue', 'Firebase', 'PWA'],
     image: '/image/Griffindormitory.png',
     githubLink: 'https://github.com/Ju-MINJAE/Griffindormitory',
+    liveLink: null,
+  },
+  {
+    title: '빌리지 Villez',
+    desc: '개인 간의 물품 대여와 반납을 지원하는 C2C 서비스',
+    features: [
+      '회원 관리: 회원가입, 로그인, 로그아웃 기능 제공',
+      '물품 관리: 물품 등록 및 예약 기능',
+      '대여 기록 관리: 물품 대여 기록 확인 및 반납 기능 지원',
+      '채팅 기능: 대여자와 물품 등록자 간 실시간 채팅 가능',
+    ],
+    duration: '2023.10 ~ 2023.12',
+    stack: ['React', 'Firebase', 'PWA'],
+    image: '/image/Viliez.GIF',
+    githubLink: 'https://github.com/Ju-MINJAE/Viliez/tree/main/viliez-pwa',
     liveLink: null,
   },
 ];
