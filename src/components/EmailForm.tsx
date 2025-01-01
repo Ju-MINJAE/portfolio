@@ -51,7 +51,7 @@ const EmailForm = () => {
 
   return (
     <div className="email-form-container bg-gray-900 p-8 rounded-lg max-w-md mx-auto">
-      <h2 className="text-2xl font-bold mb-6 text-white">Send me a message</h2>
+      <h2 className="text-2xl font-bold mb-6 text-white">이메일 전송하기</h2>
       <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
         <div>
           <label
