@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import FloatingPaths from '@/components/FloatingPaths';
 import AnimatedTitle from '@/components/AnimatedTitle';
-import AnimatedSubtitle from '@/components/AnimatedSubTitle';
+import AnimatedSubtitle from '@/components/AnimatedSubtitle';
 
 export default function Home({
   title = 'JU MIN JAE',
