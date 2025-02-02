@@ -5,13 +5,10 @@ import FloatingPaths from '@/components/FloatingPaths';
 import AnimatedTitle from '@/components/AnimatedTitle';
 import AnimatedSubtitle from '@/components/AnimatedSubtitle';
 
-export default function Home({
-  title = 'JU MIN JAE',
-  subtitle = 'Frontend Developer',
-}: {
-  title?: string;
-  subtitle?: string;
-}) {
+const Home = () => {
+  const title = 'JU MIN JAE';
+  const subtitle = 'Frontend Developer';
+
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">
       <div className="absolute inset-0">
@@ -38,4 +35,6 @@ export default function Home({
       </div>
     </div>
   );
-}
+};
+
+export default Home;
