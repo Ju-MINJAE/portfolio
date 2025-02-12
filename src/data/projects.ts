@@ -1,0 +1,68 @@
+import { Project } from '../types/project';
+
+export const projects: Project[] = [
+  {
+    id: '1',
+    title: '포트폴리오 웹사이트',
+    description: 'Next.js와 Framer Motion을 사용한 인터랙티브 포트폴리오',
+    imageUrl: '/images/portfolio.jpg',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+    ],
+    githubUrl: 'https://github.com/yourusername/portfolio',
+    liveUrl: 'https://your-portfolio-url.com',
+    duration: '2025.01 - 2025.01',
+  },
+  {
+    id: '2',
+    title: '포트폴리오 웹사이트',
+    description: 'Next.js와 Framer Motion을 사용한 인터랙티브 포트폴리오',
+    imageUrl: '/images/portfolio.jpg',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+    ],
+    githubUrl: 'https://github.com/yourusername/portfolio',
+    liveUrl: 'https://your-portfolio-url.com',
+    duration: '2025.01 - 2025.01',
+  },
+  {
+    id: '3',
+    title: '포트폴리오 웹사이트',
+    description: 'Next.js와 Framer Motion을 사용한 인터랙티브 포트폴리오',
+    imageUrl: '/images/portfolio.jpg',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+    ],
+    githubUrl: 'https://github.com/yourusername/portfolio',
+    liveUrl: 'https://your-portfolio-url.com',
+    duration: '2025.01 - 2025.01',
+  },
+  {
+    id: '4',
+    title: '포트폴리오 웹사이트',
+    description: 'Next.js와 Framer Motion을 사용한 인터랙티브 포트폴리오',
+    imageUrl: '/images/portfolio.jpg',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+    ],
+    githubUrl: 'https://github.com/yourusername/portfolio',
+    liveUrl: 'https://your-portfolio-url.com',
+    duration: '2025.01 - 2025.01',
+  },
+];
