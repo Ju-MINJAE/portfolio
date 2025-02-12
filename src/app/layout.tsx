@@ -1,6 +1,15 @@
+import { Poppins } from 'next/font/google';
 import type { Metadata } from 'next';
 import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import type React from 'react';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-poppins',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'JUMINJAE | 주민재',
@@ -14,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${poppins.className}`}>
         {children}
         <SpeedInsights />
       </body>
