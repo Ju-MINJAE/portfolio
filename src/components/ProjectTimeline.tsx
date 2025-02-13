@@ -19,7 +19,7 @@ const ProjectTimeline = () => {
   });
 
   return (
-    <section ref={ref} className="relative py-20 dark:bg-gray-900">
+    <section ref={ref} className="relative py-20 dark:bg-[#0a0a0a]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           My Projects
@@ -27,7 +27,7 @@ const ProjectTimeline = () => {
         <div className="relative">
           <motion.div
             style={{ scaleY }}
-            className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gray-600 origin-top"
+            className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gray-600 dark:bg-white origin-top"
           />
           {projects.map((project, index) => (
             <ProjectTimelineItem

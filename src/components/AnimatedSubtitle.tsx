@@ -30,7 +30,7 @@ const AnimatedSubtitle = ({ subtitle }: AnimatedSubtitleProps) => {
   }, [subtitle]);
 
   return (
-    <div className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-neutral-700 ">
+    <div className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-neutral-800 dark:text-white">
       <span ref={el} />
     </div>
   );
