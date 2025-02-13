@@ -8,8 +8,12 @@ const Home = () => {
   return (
     <div className="relative w-full">
       <Navigation />
-      <Intro />
-      <ProjectTimeline />
+      <section id="home">
+        <Intro />
+      </section>
+      <section id="projects">
+        <ProjectTimeline />
+      </section>
     </div>
   );
 };
