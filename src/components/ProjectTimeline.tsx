@@ -19,7 +19,7 @@ const ProjectTimeline = () => {
   });
 
   return (
-    <section ref={ref} className="relative py-20 dark:bg-[#0a0a0a]">
+    <section ref={ref} className="relative py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           My Projects

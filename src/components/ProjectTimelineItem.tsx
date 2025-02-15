@@ -63,7 +63,7 @@ const ProjectTimelineItem = ({ project, index }: ProjectTimelineItemProps) => {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full text-gray-800 dark:text-gray-200"
+                    className="px-2 py-1 bg-gray-200 dark:bg-gray-600 text-sm rounded-lg text-gray-800 dark:text-gray-200"
                   >
                     {tech}
                   </span>

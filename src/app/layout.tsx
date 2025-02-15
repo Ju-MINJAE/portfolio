@@ -23,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>
+      <body
+        className={`${poppins.className} bg-white dark:bg-neutral-950 text-black dark:text-white`}
+      >
         {children}
         <SpeedInsights />
       </body>
