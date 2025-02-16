@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Github, ExternalLink } from 'lucide-react';
@@ -18,8 +18,9 @@ const techColors: { [key: string]: string } = {
   Axios: 'bg-tech-axios',
 };
 
-export default function ProjectDetail() {
+const ProjectDetail = () => {
   const params = useParams();
+  const router = useRouter();
   const project = projects.find((p) => p.id === params.id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -35,6 +36,18 @@ export default function ProjectDetail() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleBack = () => {
+    // 저장된 스크롤 위치가 있다면 sessionStorage에서 가져옴
+    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+    // 홈으로 이동
+    router.back();
+
+    // 스크롤 위치 복원
+    if (savedScrollPosition) {
+      window.scrollTo(0, parseInt(savedScrollPosition));
+    }
+  };
 
   if (!project) {
     return <div className="container mx-auto px-4 py-8">Project not found</div>;
@@ -62,6 +75,26 @@ export default function ProjectDetail() {
       </div>
 
       <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <button
+          onClick={handleBack}
+          className="mb-4 flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          뒤로 가기
+        </button>
+
         <h1 className="text-5xl font-bold mb-8 text-gray-800 dark:text-white tracking-tight">
           {project.title}
         </h1>
@@ -165,4 +198,6 @@ export default function ProjectDetail() {
       </div>
     </>
   );
-}
+};
+
+export default ProjectDetail;
