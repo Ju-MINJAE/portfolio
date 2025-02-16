@@ -7,6 +7,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Github, ExternalLink } from 'lucide-react';
 import { projects } from '../../../data/projects';
 
+const techColors: { [key: string]: string } = {
+  React: 'bg-tech-react',
+  'Next.js': 'bg-transparent border border-black dark:border-white',
+  TypeScript: 'bg-tech-typescript',
+  JavaScript: 'bg-tech-javascript',
+  TailwindCSS: 'bg-tech-tailwind',
+  Firebase: 'bg-tech-firebase',
+  Redux: 'bg-tech-redux',
+  Axios: 'bg-tech-axios',
+};
+
 export default function ProjectDetail() {
   const params = useParams();
   const project = projects.find((p) => p.id === params.id);
@@ -109,8 +120,9 @@ export default function ProjectDetail() {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-sm rounded-lg 
-                    hover:scale-105 transition-transform"
+                    className={`px-4 py-2 ${
+                      techColors[tech] || 'bg-gray-200 dark:bg-gray-700'
+                    } text-sm rounded-lg hover:scale-105 transition-transform`}
                   >
                     {tech}
                   </span>
